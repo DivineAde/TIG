@@ -152,8 +152,6 @@ function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
           height={1500}
           src={city.image}
           alt={city.name}
-          placeholder="blur"
-          blurDataURL="/spinner.svg" 
           style={{
             width: "w-full",
             cursor: "pointer",
