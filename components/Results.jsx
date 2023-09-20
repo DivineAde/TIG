@@ -158,7 +158,7 @@ function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
             width: "w-full",
             cursor: "pointer",
           }}
-          className="rounded-lg"
+          className="rounded-lg touch-none"
           onLoadingComplete={() => setLoadingImages(false)} // Update loading state
         />
         {loadingImages && (
