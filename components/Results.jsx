@@ -157,7 +157,7 @@ function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
             cursor: "pointer",
           }}
           className="rounded-lg touch-none"
-          onLoadingComplete={() => setLoadingImages(true)} // Update loading state
+          onLoadingComplete={() => setLoadingImages(false)} // Update loading state
         />
         {loadingImages && (
           <div className="flex items-center justify-center">
