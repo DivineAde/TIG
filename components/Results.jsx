@@ -162,7 +162,7 @@ function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
           onLoadingComplete={() => setLoadingImages(true)} // Update loading state
         />
         {loadingImages && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-300">
+          <div className="flex items-center justify-center">
             {/* Loading spinner */}
             <div className="spinner">
               <img src="/spinner.svg" alt="spinner" />
