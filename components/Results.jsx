@@ -153,13 +153,13 @@ function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
           src={city.image}
           alt={city.name}
           placeholder="blur"
-          blurDataURL="/spinner.svg" // Replace with your loading spinner image
+          blurDataURL="/spinner.svg" 
           style={{
             width: "w-full",
             cursor: "pointer",
           }}
           className="rounded-lg touch-none"
-          onLoadingComplete={() => setLoadingImages(false)} // Update loading state
+          onLoadingComplete={() => setLoadingImages(true)} // Update loading state
         />
         {loadingImages && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-300">
