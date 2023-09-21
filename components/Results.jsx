@@ -14,6 +14,7 @@ import {
   useSortable,
 } from "@dnd-kit/sortable";
 import { useSensors, useSensor, MouseSensor, TouchSensor } from "@dnd-kit/core";
+import { signOut } from "next-auth/react";
 
 export default function Results() {
   const [cityData, setCityData] = useState(cities);
@@ -99,6 +100,7 @@ export default function Results() {
             </svg>
           </button>
         </form>
+        <button className="text-white bg-blue-700 px-4 py-2 font-semibold rounded-xl" onClick={() => signOut()}>Sign out</button>
       </div>
 
       {/* Display "not found" message when filteredCities is empty */}
