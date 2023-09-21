@@ -22,6 +22,10 @@ export default function Results() {
   const [overId, setOverId] = useState(null);
   const [loadingImages, setLoadingImages] = useState(true);
 
+  const handleImageLoad = () => {
+    setLoadingImages(true);
+  };
+
   const onSort = (newCities) => {
     setCityData(newCities);
   };
@@ -130,7 +134,6 @@ export default function Results() {
     </div>
   );
 }
-
 function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
   const { attributes, listeners, setNodeRef, transform } = useSortable({
     id: city.id,
@@ -152,6 +155,8 @@ function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
           height={1500}
           src={city.image}
           alt={city.name}
+          placeholder="blur"
+          blurDataURL="/spinner.svg" // Replace with your loading spinner image
           style={{
             width: "w-full",
             cursor: "pointer",
@@ -160,7 +165,7 @@ function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
           onLoadingComplete={() => setLoadingImages(false)} // Update loading state
         />
         {loadingImages && (
-          <div className="flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-300">
             {/* Loading spinner */}
             <div className="spinner">
               <img src="/spinner.svg" alt="spinner" />
@@ -174,3 +179,5 @@ function CityCard({ city, setLoadingImages, isDragging, loadingImages }) {
     </div>
   );
 }
+
+
