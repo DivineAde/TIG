@@ -100,6 +100,15 @@ export default function Results() {
           </button>
         </form>
       </div>
+
+      {/* Display "not found" message when filteredCities is empty */}
+      {filteredCities.length === 0 && (
+        <div className="flex items-center justify-center h-screen text-red-700">
+         Opps, No results found.
+        </div>
+      )}
+
+      <h1 className="text-lg md:text-2xl font-semibold flex items-center justify-center underline text-rose-600 pb-6 md:pb-12 uppercase pt-4">Top cities around the world</h1>
       {/* ... (rest of your code) */}
 
       <DndContext
