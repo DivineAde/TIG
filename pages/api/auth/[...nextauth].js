@@ -1,11 +1,15 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { getToken } from "next-auth/jwt";
+
+const NEXTAUTH_SECRET= "325e5d59acb519c288605ff2290eb99f";
+
 
 const authOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
       type: "credentials",
